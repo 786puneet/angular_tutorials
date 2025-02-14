@@ -1,0 +1,59 @@
+<h1 class="bg-success w-100 py-4">Data Binding and it's types</h1>
+
+<div class="row">
+<div class="col-3">
+    <p class="bg-dark text-white py-2">One way data binding .ts to .html</p>
+</div>
+<div class="col-3">
+    <p class="bg-dark text-white py-2">one way data binding .html to ts</p>
+</div>
+<div class="col-3">
+    <p class="bg-dark text-white py-2">Two way data binding</p>
+</div>
+<div class="col-3">
+    <p class="bg-dark text-white py-2">Signal data binding</p>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="col-3">
+    <div class="row">
+        <div class="col-6 bg-success">
+            <h3>Interpolation</h3>
+            <p> {{ courseName }}</p>
+            <div> {{ courseName }} </div>
+            <input type="text" value=" {{ courseName }} ">
+            <input type="{{ inputType }}" placeholder="this is demo input">
+        </div>
+        <div class="col-6 bg-primary ">
+            <h3>Property binding</h3>
+        <div [class]=className>Danger</div>
+        <input type="text" [placeholder]=placeholdertext>
+        <input [type]=typeInput placeholder="change type of input by propert binding">
+        </div>
+    </div>
+</div>
+<div class="col-3">
+<button (click)="showAlert('welcome to angular')" class="btn btn-danger">Welcome</button>
+<button (click)="showAlert('let start learninng angular here')" class="btn btn-danger">Let Start</button>
+<button class="btn bg-dark text-white" (click)="changeCourseName()">changeCourseName</button>
+</div>
+<div class="col-3">
+    <input type="text" [(ngModel)]="courseName">
+    <select [(ngModel)]="stateName">
+        <option value="">Selected</option>
+        <option value="punjab">punjab</option>
+        <option value="Himachal">Himachal</option>
+        <option value="Mohali">Mohali</option>
+    </select>
+<h5>this is show selected state from dropdown</h5>
+    <div class="state">
+        {{ stateName }}
+    </div>
+</div>
+<div class="col-3">
+    {{ favActorName() }}
+</div>
+</div>
