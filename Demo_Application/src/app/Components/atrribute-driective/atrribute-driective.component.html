@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="container bg-black text-white">
+        <h1>Atrribute Driective</h1>
+        <p>*ngClass and *ngStyle</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 " [ngClass]="div1BgColor">
+        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium repudiandae aut quis aspernatur, ipsa quos ea quisquam porro, quas rerum fugiat assumenda cum blanditiis deleniti? Aspernatur, alias!</p>
+    </div>
+    <div class="col-3  " [ngClass]="isActive?'bg-warning' : 'bg-success'"></div>
+    <div class="col-3"     [ngClass]="num1 == num2?'bg-info' : 'bg-success'"></div>
+    <div class="col-3"[ngClass]="isChecked? 'bg-warning' : 'bg-danger'">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ad exercitationem, voluptate alias quidem et, provident sint recusandae fugiat laborum, libero amet vel tempore nulla! Minima vitae facere pariatur possimus.
+        Dicta neque excepturi, fugit perspiciatis pariatur quis quos reiciendis porro sequi vero deserunt minus illum adipisci, tenetur ducimus non recusandae voluptatum labore eius possimus earum, inventore maxime dolores? Vitae, minima.</p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn bg-primary m-3 " (click)="blueBg()">Blue</button>
+        <button class="btn bg-danger m-3 " (click)="redBg()">Red</button>
+    </div>
+    <div class="col-3">
+        <button class="btn bg-black text-white m-4" (click)="toggelbtn()">Toggel Button</button>
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="num1" placeholder="Num 1 Value">
+        <input type="text" [(ngModel)]="num2" placeholder="Num 2 Value">
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isChecked" (click)="enableCheck()">
+    </div>
+</div>
+
+<div class="row">
+    <table>
+        <tr>
+         <th>Name</th>   
+         <th>Class</th>
+         <th>status</th>
+         <th>Total Marks</th>
+        </tr>
+
+        <tbody>
+            <tr *ngFor="let student of studentlist">
+            <td> {{ student.name}} </td>                             
+            <td> {{ student.class}} </td>   
+            <td [ngStyle]="{'background-color' : student.status? 'green' : 'red'}"> {{ student.status?'Active' : 'Deactive' }} </td>   
+             <td> <div class="progress"><div class="progress-bar"  [ngStyle]="{'width': student.marks + '%' }">{{ student.marks}}</div> </div> </td> 
+        </tr>
+        </tbody>
+    </table>
+
+    <div [ngStyle]="Circle"></div>
+</div>
