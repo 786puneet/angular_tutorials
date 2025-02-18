@@ -1,1 +1,117 @@
-<p>structural-driectives works!</p>
+<!-- ng if  -->
+<div class="row">
+    <div class="container">
+        <div class="wrap bg-info p-4">
+            <h1>*ng Driectives</h1>
+            <p>*ngIf , *ngFor</p>
+        </div>
+      
+    </div>
+</div>
+<div class="row">
+    <div *ngIf="isdiv1visiable" class="col-2 bg-secondary px-3 py-4 my-3">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor sequi consequatur repellendus maxime natus totam ipsum harum eaque deleniti. Cumque amet nostrum error at! Quod expedita illum repudiandae iusto natus!
+        Enim fuga id aliquam autem, quae soluta ea ad? Voluptatum, ratione veritatis. Earum, repellendus nobis! Ullam expedita aliquam, voluptatibus adipisci soluta rem temporibus itaque unde. Ea quasi cupiditate soluta nihil?</p>
+    </div>
+       <div *ngIf="toggelShow" class="col-2 bg-warning px-3 py-4 my-3 ">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor sequi consequatur repellendus maxime natus totam ipsum harum eaque deleniti. Cumque amet nostrum error at! Quod expedita illum repudiandae iusto natus!
+        Enim fuga id aliquam autem, quae soluta ea ad? Voluptatum, ratione veritatis. Earum, repellendus nobis! Ullam expedita aliquam, voluptatibus adipisci soluta rem temporibus itaque unde. Ea quasi cupiditate soluta nihil?</p>
+    </div>
+    <div *ngIf="input1Value == input2Value" class="col-2 bg-info py-4 my-3 ">
+       
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor sequi consequatur repellendus maxime natus totam ipsum harum eaque deleniti. Cumque amet nostrum error at! Quod expedita illum repudiandae iusto natus!
+            Enim fuga id aliquam autem, quae soluta ea ad? Voluptatum, ratione veritatis. Earum, repellendus nobis! Ullam expedita aliquam, voluptatibus adipisci soluta rem temporibus itaque unde. Ea quasi cupiditate soluta nihil?</p>
+     
+    </div>
+    <div *ngIf="activeCheckbox" class="col-2 bg-warning py-4 my-3 ">
+       
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor sequi consequatur repellendus maxime natus totam ipsum harum eaque deleniti. Cumque amet nostrum error at! Quod expedita illum repudiandae iusto natus!
+        Enim fuga id aliquam autem, quae soluta ea ad? Voluptatum, ratione veritatis. Earum, repellendus nobis! Ullam expedita aliquam, voluptatibus adipisci soluta rem temporibus itaque unde. Ea quasi cupiditate soluta nihil?</p>
+ 
+</div>
+<div class="col-4 bg-warning py-4 my-3 ">
+       <div class=" bg-info py-2">{{ selectCountry }}</div>
+</div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button (click)="isShow()" class="btn btn-primary show-btn mx-3">Show</button>
+        <button (click)="isHide()" class="btn btn-secondary hide-btn mx-3">Hide</button>
+    </div>
+    <div class="col-3">
+        <button (click)="toggelBtn()" class="btn btn-outline-danger show-btn mx-3">Toggel</button>
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="input1Value">
+        <input type="text" [(ngModel)]="input2Value">
+    </div>
+    <div class="col-2">
+        <input type="checkbox" [(ngModel)]="activeCheckbox">
+    </div>
+     <div class="col-1">
+        <select [(ngModel)]="selectCountry">
+            <option value="">Country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="India">India</option>
+            <option value="Africa">Africa</option>
+        </select>
+     </div>
+</div>
+
+<!-- ngfor loop  -->
+
+<div class="row">
+    <div class="container bg-black text-white-50">
+     <h2>*ng For</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let City of allCity"> {{ City }}</li>
+        </ul>
+    </div>
+    <div class="col-2">
+        <div *ngFor="let City of allCity"> {{ City }} </div>
+    </div>
+    <div class="col-2">
+        <select>
+            <option *ngFor="let City of allCity"> {{ City }} </option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select>
+            <option *ngFor="let student of studentList" value="{{ student.id}}"> {{ student.name }}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <table>
+            <thead>
+                <th>Serial No</th>
+                <th>Name</th>
+                <th>Qualification</th>
+                <th>Status</th>
+            </thead>
+  <tbody>
+    <tr *ngFor="let student of studentList; let number = index">
+        <td> {{ number + 1}} </td>
+        <td> {{student.name}} </td>
+        <td> {{student.qualification}} </td>
+        <td> 
+            <strong *ngIf="student.isActive">Active</strong>
+            <strong *ngIf="!student.isActive">Deactivated</strong>
+        </td>
+    </tr>
+  </tbody>
+
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-3"></div>
+    <div class="col-3"></div>
+</div>
