@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-atrribute-driective',
@@ -14,6 +15,9 @@ isActive:boolean=false;
 num1:string='';
 num2:string='';
 isChecked:boolean=true;
+constructor(private router:Router){
+
+}
 studentlist:any=[
   {name:'puneet',class:'bba',status:true, marks:26},
   {name:'Shivam',class:'bca',status:true, marks:57},
@@ -38,5 +42,9 @@ toggelbtn(){
 }
 enableCheck(){
   this.isChecked=!this.isChecked;
+}
+
+navigateToStructreDriective(){
+this.router.navigateByUrl('struture-driectives')
 }
 }
