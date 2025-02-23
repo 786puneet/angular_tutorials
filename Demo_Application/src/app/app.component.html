@@ -21,8 +21,19 @@
                   <li><a class="dropdown-item" [routerLink]="'/attribute-driectives'">Attribute Directives</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" [routerLink]="'/data-binding'">Data Binding</a></li>
+                  
                 </ul>
               </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Control Flow Statment
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" [routerLink]="'/ifelse-control-flow'">If Else and Else If</a></li>
+                  <li><a class="dropdown-item" [routerLink]="'/for-loop-control-flow'">For Loop</a></li>
+                </ul>
+              </li> 
               
         </ul>
         <form class="d-flex" role="search">
@@ -31,8 +42,8 @@
         </form>
       </div>
     </div>
-  </nav>
-  
+</nav> 
+
 <div class="container">
   <router-outlet></router-outlet>
 </div>

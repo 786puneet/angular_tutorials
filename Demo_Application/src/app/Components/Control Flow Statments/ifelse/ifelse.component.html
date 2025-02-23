@@ -1,0 +1,97 @@
+<div class="row bg-primary">
+<div class="intro ">
+    <p>Control flow statment  &#64;if , &#64;else , &#64;if else</p>
+</div>
+</div>
+<div class="row">
+<div class="col-3">
+    @if(div1Show)
+    {
+    
+    <div class="bg-black p-4">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, dolore et dolores odio, officia quam atque dicta corrupti fugit, veritatis quo consequatur obcaecati. Placeat aperiam nostrum aspernatur sint, velit laborum!
+       quibusdam minus, minima molestiae corporis! Dignissimos molestiae beatae non neque nisi tenetur quis hic cum voluptatem! Veritatis.</p>
+    </div>
+    }
+</div>
+<div class="col-3">
+    @if(isDivBlack){
+    <div class="bg-black p-4 m-4">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, dolore et dolores odio, officia quam atque dicta corrupti fugit, veritatis quo consequatur obcaecati. Placeat aperiam nostrum aspernatur sint, velit laborum!
+       quibusdam minus, minima molestiae corporis! Dignissimos molestiae beatae non neque nisi tenetur quis hic cum voluptatem! Veritatis.</p>
+    </div>
+    }
+    @else{
+    <div class=" bg-danger p-4  m-4">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, dolore et dolores odio, officia quam atque dicta corrupti fugit, veritatis quo consequatur obcaecati. Placeat aperiam nostrum aspernatur sint, velit laborum!
+       quibusdam minus, minima molestiae corporis! Dignissimos molestiae beatae non neque nisi tenetur quis hic cum voluptatem! Veritatis.</p>
+    </div>
+}
+</div>
+<div class="col-3">
+    @if(value1 == value2)
+    {
+        <div class="bg-success">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet odit commodi quae, sapiente sunt consequuntur assumenda impedit sed officiis delectus facere sequi, quod perferendis culpa, magnam similique in minus inventore?</p>
+        </div>
+    }
+
+</div>
+<div class="col-3">
+@if(selectStatus == 'active'){
+    <div class="bg-success p-3">
+     <h5>Your status is Active</h5>
+    </div>
+}
+@else if(selectStatus == 'de-active')
+{
+    <div class="bg-danger p-3">
+        <h5>Your status is De-actived</h5>
+    </div>
+
+}
+@else if(selectStatus == 'progress')
+{
+    <div class="bg-info p-3">
+        <h5>Your status is Progess</h5>
+    </div>
+}
+@else if(selectStatus == 'pending')
+{
+    <div class="bg-primary p-3">
+        <h5>Your status is Pending</h5>
+    </div>
+}
+@else
+{
+    <div class="bg-danger p-3">
+        Select your status
+    </div>
+}
+</div>
+</div>
+
+<div class="row">
+<div class="col-3">
+    
+        <button class="bg-primary btn m-3" (click) = "showDiv1()">Show</button>
+        <button class="bg-danger btn" (click) = "hideDiv1()">Hide</button>
+
+</div>
+<div class="col-3">
+    <button (click)="toggelBtn()" class="bg-warning btn">Toggel Button</button>
+</div>
+<div class="col-3">
+    <input type="text" [(ngModel)]="value1">
+    <input type="text" [(ngModel)]="value2">
+</div>
+<div class="col-3">
+    <select [(ngModel)]="selectStatus">
+        <option value="">Select Status</option>
+        <option value="active">Active</option>
+        <option value="de-active">De-active</option>
+        <option value="progress">Progress</option>
+        <option value="pending">Pending</option>
+    </select>
+</div>
+</div>

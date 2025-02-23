@@ -1,0 +1,109 @@
+<div class="row bg-black p-3 mb-5">
+    <h3 class="text-white">for switchCase </h3>
+</div>
+
+<div class="row">
+
+    <div class="col-3">
+        <ul>
+            @for(City of cityNames ; track $index;)
+            {
+                <li> {{ $index + 1 }} {{  City }} </li>
+            }
+          
+        </ul>
+    </div>
+    
+    <div class="col-3">
+            @for(City of cityNames ; track $index;)
+            {
+                <div> {{ $index + 1 }} {{  City }} </div>
+            }
+    </div>
+    
+    <div class="col-3">
+                <select>
+                    <option value="">Select your city</option>
+                    @for(City of cityNames ; track $index;){
+                    <option value="{{ City }}">{{  City }} </option>
+                    }
+                </select>
+    </div>
+    
+    <div class="col-3">
+        <select>
+            <option value="">Select your city</option>
+            @for(studentData of allStudentData ; track $index;){
+            <option value="{{ studentData.id }}">{{  studentData.name }} </option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Student Qualification</th>
+                    <th>Student City</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                @for(Student of allStudentData; track $index ){
+                    <tr>
+                        <td>{{ Student.id }} </td>
+                        <td>{{ Student.name }}</td>
+                        <td>{{ Student.qualification }}</td>
+                        <td>{{ Student.city }}</td>
+                    </tr>
+                }
+          
+            </tbody>
+        </table>
+    
+    
+    </div>
+</div>
+
+<div class="row">
+    <input type="text" [(ngModel)]="dayNumber">
+    Name of the day is : 
+    @switch(dayNumber){
+    @case('1')
+    {
+        <p>Monday</p>
+    }
+    @case('2')
+    {
+        <span>Monday</span>
+    }
+    @case('3')
+    {
+        <span>Monday</span>
+    }
+    @case('4')
+    {
+        <span>Monday</span>
+    }
+    @case('5')
+    {
+        <span>Monday</span>
+    }
+    @case('6')
+    {
+        <span>Monday</span>
+    }
+    @case('7')
+    {
+        <span>Monday</span>
+    }
+    @default{
+        <span>Enter Vaild Number </span>
+    }
+    }
+    
+</div>
