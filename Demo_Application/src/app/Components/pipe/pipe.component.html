@@ -1,0 +1,54 @@
+<div class="row  bg-danger mb-5">
+    <h3>Pipe in Angular</h3>
+    <p>Default pipe & Custom Pipe</p>
+</div>
+
+<div class="row m-4">
+    <div class="col-4 bg-success">
+        <h4>Orignial Line - {{ demotext }} </h4>
+        <h4> {{ demotext | lowercase }} </h4>
+    </div>
+    <div class="col-4 bg-success">
+        <h4>Orignial Line - {{ demotext }} </h4>
+        <h4>{{ demotext | uppercase }}</h4>
+    </div>
+    <div class="col-4 bg-success">
+        <h4>Orignial Line - {{ demotext }} </h4>
+        <h4>{{ demotext | titlecase }}</h4>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-4 bg-primary">
+        <h4>Orignal Date Format : </h4><p>{{ date }}</p>
+        <h4>Render with Pipe</h4>
+        <p>{{ date | date}}</p>
+    </div>
+    <div class="col-4 bg-primary">
+        <h4>Orignal Date Format : </h4><p>{{ date }}</p>
+        <h4>Render with Pipe</h4>
+        <p>{{ date | date:'dd-mm-yy' }}</p>
+    </div>
+    <div class="col-4 bg-primary">
+        <h4>Orignal Date Format : </h4><p>{{ date }}</p>
+        <h4>Render with Pipe</h4>
+        <p>{{ date | date:'dd/MMM/yyy' }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <h4>Orignal Line :-</h4> {{ student }}
+        <h4>After Use Json pipe</h4> {{ student | json}}
+    </div>
+    <div class="col-6">
+        <h4>Orignal Line :-</h4> {{ CurrentTime }}
+        <h4>After Use Json pipe</h4> {{ CurrentTime | async | date:'hh:mm:ss' }}
+    </div>
+</div>
+
+<div class="row">
+    <h4>Custom Pipe</h4>
+    <h6> {{ test | na}} </h6>
+
+</div>

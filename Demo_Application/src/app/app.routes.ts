@@ -6,6 +6,7 @@ import { StructuralDriectivesComponent } from './Components/structural-driective
 import { AtrributeDriectiveComponent } from './Components/atrribute-driective/atrribute-driective.component';
 import { IfelseComponent } from './Components/Control Flow Statments/ifelse/ifelse.component';
 import { ForLoopComponent } from './Components/Control Flow Statments/for-loop/for-loop.component';
+import { PipeComponent } from './Components/pipe/pipe.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path:'for-loop-control-flow',
         component:ForLoopComponent,
+    },
+    {
+        path:'pipes',
+        component:PipeComponent,
     }
 ];
