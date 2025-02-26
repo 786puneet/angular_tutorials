@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-12 bg-primary p-2 my-3">
+        <h3>Template Form </h3>
+        <p>using ng model</p>
+    </div>
+</div>
+
+<form #myForm="ngForm">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">First name</label>
+        <input #fName="ngModel" name="firstName" required minlength="4" [(ngModel)]="studentObj.firstName" type="text" class="form-control" id="validationDefault01" placeholder="First name"  required>
+        <div class="error-messages">
+            @if((fName.touched || fName.dirty) && fName.errors?.['required'])
+            {
+            <p class="text-danger">This field is required</p>
+            }
+            @else if ( fName.errors?.['minlength'])
+            {
+            <p class="text-danger">Please enter alleast 4 words name</p>
+            }
+        
+        </div>
+        <!-- <DIV>
+            {{ fName.errors | json}}
+        </DIV> -->
+    </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Last name</label>
+        <input name="lastName" [(ngModel)]="studentObj.lastName" type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" >
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">&#64;</span>
+          </div>
+          <input name="userName" [(ngModel)]="studentObj.userName" type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" >
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">City</label>
+        <input name="city" [(ngModel)]="studentObj.city" type="text" class="form-control" id="validationDefault03" placeholder="City" >
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">State</label>
+        <select name="state" [(ngModel)]="studentObj.state">
+        <option selected value="">Chossen...</option>
+        <option value="punjab">Punjab</option>
+        <option value="mohali">Mohali</option>
+        <option value="chandighar">Chandighar</option>
+    </select>   
+    </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault05">Zip</label>
+        <input name="zipCode" [(ngModel)]="studentObj.zipCode" type="text" class="form-control" id="validationDefault05" placeholder="Zip" >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input name="isAcceptTerms" [(ngModel)]="studentObj.isAcceptTerms" class="form-check-input" type="checkbox" value="" id="invalidCheck2" >
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="myForm.invalid" (click)="onSubmit()">Submit form</button>
+    <button class="btn btn-secondry" type="rest"></button>
+</form>
+
+  <div class="row">
+    <div class="col-12 bg-primary mt-4 p-4">
+    <p class="text-white"> {{formValue | json}} </p>
+    </div>
+  </div>

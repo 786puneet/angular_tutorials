@@ -7,6 +7,8 @@ import { AtrributeDriectiveComponent } from './Components/atrribute-driective/at
 import { IfelseComponent } from './Components/Control Flow Statments/ifelse/ifelse.component';
 import { ForLoopComponent } from './Components/Control Flow Statments/for-loop/for-loop.component';
 import { PipeComponent } from './Components/pipe/pipe.component';
+import { TemplateFormComponent } from './Components/Forms/template-form/template-form.component';
+import { ReactiveFormComponent } from './Components/Forms/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     {
@@ -40,5 +42,13 @@ export const routes: Routes = [
     {
         path:'pipes',
         component:PipeComponent,
+    },
+    {
+        path:'template-form',
+        component:TemplateFormComponent,
+    },
+    {
+        path:'reactive-form',
+        component:ReactiveFormComponent,
     }
 ];
