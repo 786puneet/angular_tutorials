@@ -1,0 +1,53 @@
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h4>Post API <br> Create Department, Department List</h4>
+      </div>
+      <div class="card-body row">
+        <!-- Left: Department List -->
+        <div class="col-md-7">
+          <h5>Department List</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for(item of departmentRecords; track $index)
+                {
+                <tr>
+                   
+                        <td> {{item.departmentId}} </td>
+                        <td> {{item.departmentName}} </td>
+                        <td> {{item.departmentLogo}} </td>
+          
+                </tr>
+            }
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Right: New Department Form -->
+        <div class="col-md-5">
+          <h5>New Department</h5>
+          <form >
+            <div class="mb-3">
+              <label>Department Name</label>
+              <input name="departmentName" [(ngModel)]="departmentObj.departmentName" type="text" class="form-control"  required>
+            </div>
+            <div class="mb-3">
+              <label>Department Logo</label>
+              <input name="departmentLogo" [(ngModel)]="departmentObj.departmentLogo" type="text" class="form-control"  required>
+            </div>
+            <button type="reset"  class="btn btn-secondary mx-4">Reset</button>
+            <button type="submit" (click)="onSave()" class="btn btn-success">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

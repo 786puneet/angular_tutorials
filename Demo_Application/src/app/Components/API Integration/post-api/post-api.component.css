@@ -1,0 +1,13 @@
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  

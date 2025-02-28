@@ -9,6 +9,8 @@ import { ForLoopComponent } from './Components/Control Flow Statments/for-loop/f
 import { PipeComponent } from './Components/pipe/pipe.component';
 import { TemplateFormComponent } from './Components/Forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './Components/Forms/reactive-form/reactive-form.component';
+import { GetApiComponent } from './Components/API Integration/get-api/get-api.component';
+import { PostApiComponent } from './Components/API Integration/post-api/post-api.component';
 
 export const routes: Routes = [
     {
@@ -50,5 +52,13 @@ export const routes: Routes = [
     {
         path:'reactive-form',
         component:ReactiveFormComponent,
+    },
+    {
+        path:'get-api',
+        component:GetApiComponent,
+    },
+    {
+        path:'post-api',
+        component:PostApiComponent,
     }
 ];
