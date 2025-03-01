@@ -44,4 +44,38 @@ export class PostApiComponent  implements OnInit{
     })
   }
   
-}
+  editRecord(data:any)
+  {
+   this.departmentObj = data;
+  }
+  updateRecord(){
+  
+    this.http.post('https://projectapi.gerasim.in/api/Complaint/UpdateDepartment',this.departmentObj).subscribe((res:any)=>{
+      if(res.result)
+      {
+       alert('Department is Updated.')
+       this.getDepartmentData();
+      }
+      else
+      {
+        alert(res.message)
+      }
+      })
+  }
+
+  
+
+  deleteRecord(id:number){
+    this.http.delete('https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=' +id).subscribe((res:any)=>{
+      if(res.result)
+      {
+       alert('Department is Deleted.')
+       this.getDepartmentData();
+      }
+      else
+      {
+        alert(res.message)
+      }
+      })
+    }
+  }

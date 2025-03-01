@@ -13,7 +13,7 @@
                 <th>Sr No</th>
                 <th>Name</th>
                 <th>City</th>
-                <th>Status</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -24,6 +24,11 @@
                         <td> {{item.departmentId}} </td>
                         <td> {{item.departmentName}} </td>
                         <td> {{item.departmentLogo}} </td>
+                        <td>
+                        <button class="btn btn-primary mx-3" (click)="editRecord(item)">Edit Record</button>
+                        <button class="btn btn-danger" (click)="deleteRecord(item.departmentId)">Delete Record</button>
+                        </td>
+                      
           
                 </tr>
             }
@@ -43,8 +48,14 @@
               <label>Department Logo</label>
               <input name="departmentLogo" [(ngModel)]="departmentObj.departmentLogo" type="text" class="form-control"  required>
             </div>
-            <button type="reset"  class="btn btn-secondary mx-4">Reset</button>
-            <button type="submit" (click)="onSave()" class="btn btn-success">Save</button>
+            <button  class="btn btn-secondary mx-4">Reset</button>
+            @if(departmentObj.departmentId == 0){
+              <button type="submit" (click)="onSave()" class="btn btn-success">Save</button>
+            }
+            @else
+            {
+              <button (click)="updateRecord()" class="btn btn-warning">Update Record</button>
+            }
           </form>
         </div>
       </div>
