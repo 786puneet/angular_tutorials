@@ -1,3 +1,9 @@
+<div class="row">
+  <div class="col-12">
+    <app-alert [alertType]="'Warning'" [pageName]="'Post API Page'" ></app-alert>
+  </div>
+</div>
+
 <div class="container mt-4">
     <div class="card">
       <div class="card-header bg-success text-white">
@@ -25,8 +31,9 @@
                         <td> {{item.departmentName}} </td>
                         <td> {{item.departmentLogo}} </td>
                         <td>
-                        <button class="btn btn-primary mx-3" (click)="editRecord(item)">Edit Record</button>
-                        <button class="btn btn-danger" (click)="deleteRecord(item.departmentId)">Delete Record</button>
+                        <button class="btn btn-primary mx-1" (click)="editRecord(item)">Edit Record</button>
+                        <app-my-button  [btnClass]="'btn btn-danger'" [btnText]="'Delete Record'" > </app-my-button>
+                        <!-- <button class="btn btn-danger" (click)="deleteRecord(item.departmentId)">Delete Record</button> -->
                         </td>
                       
           
@@ -49,9 +56,9 @@
               <input name="departmentLogo" [(ngModel)]="departmentObj.departmentLogo" type="text" class="form-control"  required>
             </div>
             <button  class="btn btn-secondary mx-4">Reset</button>
-            @if(departmentObj.departmentId == 0){
+              @if(departmentObj.departmentId == 0){
               <button type="submit" (click)="onSave()" class="btn btn-success">Save</button>
-            }
+              }
             @else
             {
               <button (click)="updateRecord()" class="btn btn-warning">Update Record</button>

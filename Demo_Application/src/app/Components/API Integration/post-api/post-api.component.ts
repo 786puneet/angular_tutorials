@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject , OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { DepartmentServicesService } from '../../Services/department-services.service';
+import { AlertComponent } from '../../Resuable Components/alert/alert.component';
 @Component({
   selector: 'app-post-api',
-  imports: [FormsModule],
+  imports: [FormsModule,AlertComponent],
   templateUrl: './post-api.component.html',
-  styleUrl: './post-api.component.css'
+  styleUrl: './post-api.component.css',
+
 })
 export class PostApiComponent  implements OnInit{
   private http = inject(HttpClient);
@@ -22,20 +24,36 @@ export class PostApiComponent  implements OnInit{
 
   
 
+  // onSave(){
+  
+  //   this.http.post('https://projectapi.gerasim.in/api/Complaint/AddNewDepartment',this.departmentObj).subscribe((res:any)=>{
+  //   if(res.result)
+  //   {
+  //    alert('Department is created.')
+  //    this.getDepartmentData();
+  //   }
+  //   else
+  //   {
+  //     alert(res.message)
+  //   }
+  //   })
+  
+  // }
+
+  // services method
+ private depService = inject(DepartmentServicesService);
   onSave(){
-  
-    this.http.post('https://projectapi.gerasim.in/api/Complaint/AddNewDepartment',this.departmentObj).subscribe((res:any)=>{
-    if(res.result)
-    {
-     alert('Department is created.')
-     this.getDepartmentData();
-    }
-    else
-    {
-      alert(res.message)
-    }
+    this.depService.postAllDepartmentData(this.departmentObj).subscribe((res:any)=>{
+      if(res.result)
+          {
+           alert('Department is created.')
+           this.getDepartmentData();
+          }
+          else
+          {
+            alert(res.message)
+          }
     })
-  
   }
   departmentRecords:any[]=[];
   getDepartmentData(){
