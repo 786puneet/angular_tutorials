@@ -11,6 +11,7 @@ import { TemplateFormComponent } from './Components/Forms/template-form/template
 import { ReactiveFormComponent } from './Components/Forms/reactive-form/reactive-form.component';
 import { GetApiComponent } from './Components/API Integration/get-api/get-api.component';
 import { PostApiComponent } from './Components/API Integration/post-api/post-api.component';
+import { LifecycleEventComponent } from './Components/lifecycle-event/lifecycle-event.component';
 
 export const routes: Routes = [
     {
@@ -60,5 +61,9 @@ export const routes: Routes = [
     {
         path:'post-api',
         component:PostApiComponent,
+    },
+    {
+        path:'lifecycle-event',
+        component:LifecycleEventComponent,
     }
 ];

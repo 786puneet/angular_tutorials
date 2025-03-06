@@ -3,9 +3,10 @@ import { Component, inject , OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DepartmentServicesService } from '../../Services/department-services.service';
 import { AlertComponent } from '../../Resuable Components/alert/alert.component';
+import { MyButtonComponent } from '../../Resuable Components/alert/my-button/my-button.component';
 @Component({
   selector: 'app-post-api',
-  imports: [FormsModule,AlertComponent],
+  imports: [FormsModule,AlertComponent,MyButtonComponent],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css',
 
@@ -81,7 +82,9 @@ export class PostApiComponent  implements OnInit{
       })
   }
 
-  
+data(addData:any){
+  debugger;
+}  
 
   deleteRecord(id:number){
     this.http.delete('https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=' +id).subscribe((res:any)=>{

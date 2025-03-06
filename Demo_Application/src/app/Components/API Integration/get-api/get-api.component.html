@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12">
-        <app-alert [alertType]="'Success'" [pageName]="'Get API Page'"></app-alert>
+        <app-alert [alertType]="'Success'" [pageName]="alertMsg"></app-alert>
     </div>
 </div>
 
@@ -22,4 +22,8 @@
             }
         </select>
     </div>
+</div>
+
+<div class="col4">
+    <button (click)="changeMsg()">Change Message</button>
 </div>

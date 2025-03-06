@@ -35,4 +35,9 @@ export class GetApiComponent {
     }
   );
 }
+alertMsg:string="";
+
+changeMsg(){
+  this.alertMsg="You are in api get page.."
+}
 }
