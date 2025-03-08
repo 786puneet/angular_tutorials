@@ -1,1 +1,34 @@
-<p>ng-template works!</p>
+<div class="row">
+    <div class="col-12 bg-black text-center py-3 my-4">
+      <h4 class="text-white">ng Template</h4>
+    </div>
+</div>
+
+<div class="row" >
+    <div *ngIf="isUserLogin; else noUserFound" class="col-3 py-3 bg-primary">
+        {{userName}}
+    </div>
+    <ng-template #noUserFound>
+        <div class="col-3 bg-danger">
+            <h4>This is no user login</h4>
+        </div> 
+    </ng-template>
+<div class="col-3">
+    <ng-template #dynamicText>
+        <h3>this is dynamic paragrah</h3>
+    </ng-template>
+</div>
+
+<div  class="col-3">
+<div #addDynamicText>
+
+</div>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-3">
+        <button (click)="loadTemplate()" class="btn btn-danger py-2">Load content</button>
+    </div>
+</div>

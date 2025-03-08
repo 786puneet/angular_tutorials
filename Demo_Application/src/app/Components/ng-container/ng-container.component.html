@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-12 bg-dark-subtle py-3 my-2">
+    <h4>ng Container</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <ng-container *ngIf="isConatiner" >
+            <p>This is ng container</p>
+        </ng-container>
+       
+    </div>
+<div class="col-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Company Name</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <ng-container *ngIf="isAPI">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-border text-secondary" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-border text-danger" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                 
+                      
+                </ng-container>
+
+                <ng-container *ngIf="!isAPI">
+                    <tr *ngFor="let user of userData; let serialNo = index">
+                        <td> {{serialNo + 1}} {{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.address.city }}</td>
+                        <td>{{ user.company.name }}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>
+
+<div class="col-4">
+    <ng-container *ngTemplateOutlet="templateText">
+
+    </ng-container>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <button (click)="allUserData()" class="btn btn-primary py-2 ">Get User Data</button>
+    </div>
+</div>
+
+<ng-template #templateText>
+    <p>this come from ng template tag</p>
+</ng-template>
