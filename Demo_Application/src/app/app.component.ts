@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {  RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
@@ -9,4 +9,10 @@ import {  RouterOutlet, RouterLink } from '@angular/router';
 })
 export class AppComponent {
   title = 'Demo_Application';
+
+@HostListener('onScroll')
+  onScroll()
+  {
+
+  }
 }

@@ -1,0 +1,15 @@
+<div class="row bg-danger">
+    <div class="col-12 py-3 text-center my-2">
+      <h4>ViewChild</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <input value="This is test text" type="text" #inputTxt>
+    </div>
+    <div class="col-4">
+        <app-alert [alertType]="'Success'" [pageName]="'There i call child component in parent with help of viewchild'" ></app-alert>
+    </div>
+    <div class="col-4"></div>
+</div>

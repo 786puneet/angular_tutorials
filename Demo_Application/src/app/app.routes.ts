@@ -14,6 +14,7 @@ import { PostApiComponent } from './Components/API Integration/post-api/post-api
 import { LifecycleEventComponent } from './Components/lifecycle-event/lifecycle-event.component';
 import { NgTemplateComponent } from './Components/ng-template/ng-template.component';
 import { NgContainerComponent } from './Components/ng-container/ng-container.component';
+import { ViewChildComponent } from './Components/view-child/view-child.component';
 
 export const routes: Routes = [
     {
@@ -75,5 +76,9 @@ export const routes: Routes = [
     {
         path:'ng-conatiner',
         component:NgContainerComponent,
+    },
+    {
+        path:'view-child',
+        component:ViewChildComponent,
     }
 ];
