@@ -15,70 +15,93 @@ import { LifecycleEventComponent } from './Components/lifecycle-event/lifecycle-
 import { NgTemplateComponent } from './Components/ng-template/ng-template.component';
 import { NgContainerComponent } from './Components/ng-container/ng-container.component';
 import { ViewChildComponent } from './Components/view-child/view-child.component';
+import { LoginComponent } from './Components/login/login.component';
+import { Component } from '@angular/core';
+import { LayoutComponent } from './Components/layout/layout.component';
 
 export const routes: Routes = [
+    // default route
     {
-        path:'employess',
-        component:EmployessComponent,
+  path:'',
+  redirectTo:'login',
+  pathMatch:'full'
     },
     {
-        path:'employess-list',
-        component:EmployessListComponent,
+        path:'login',
+        component:LoginComponent,
+
     },
+
     {
-        path:'data-binding',
-        component:DataBindingComponent,
+        path:'',
+        component:LayoutComponent,
+        children:[
+            {
+                path:'employess',
+                component:EmployessComponent,
+            },
+            {
+                path:'employess-list',
+                component:EmployessListComponent,
+            },
+            {
+                path:'data-binding',
+                component:DataBindingComponent,
+            },
+            {
+                path:'struture-driectives',
+                component:StructuralDriectivesComponent,
+            },
+            {
+                path:'attribute-driectives',
+                component:AtrributeDriectiveComponent,
+            },
+            {
+                path:'ifelse-control-flow',
+                component:IfelseComponent,
+            },
+            {
+                path:'for-loop-control-flow',
+                component:ForLoopComponent,
+            },
+            {
+                path:'pipes',
+                component:PipeComponent,
+            },
+            {
+                path:'template-form',
+                component:TemplateFormComponent,
+            },
+            {
+                path:'reactive-form',
+                component:ReactiveFormComponent,
+            },
+            {
+                path:'get-api',
+                component:GetApiComponent,
+            },
+            {
+                path:'post-api',
+                component:PostApiComponent,
+            },
+            {
+                path:'lifecycle-event',
+                component:LifecycleEventComponent,
+            },
+            {
+                path:'ng-template',
+                component:NgTemplateComponent,
+            },
+            {
+                path:'ng-conatiner',
+                component:NgContainerComponent,
+            },
+            {
+                path:'view-child',
+                component:ViewChildComponent,
+            }
+        ]
     },
-    {
-        path:'struture-driectives',
-        component:StructuralDriectivesComponent,
-    },
-    {
-        path:'attribute-driectives',
-        component:AtrributeDriectiveComponent,
-    },
-    {
-        path:'ifelse-control-flow',
-        component:IfelseComponent,
-    },
-    {
-        path:'for-loop-control-flow',
-        component:ForLoopComponent,
-    },
-    {
-        path:'pipes',
-        component:PipeComponent,
-    },
-    {
-        path:'template-form',
-        component:TemplateFormComponent,
-    },
-    {
-        path:'reactive-form',
-        component:ReactiveFormComponent,
-    },
-    {
-        path:'get-api',
-        component:GetApiComponent,
-    },
-    {
-        path:'post-api',
-        component:PostApiComponent,
-    },
-    {
-        path:'lifecycle-event',
-        component:LifecycleEventComponent,
-    },
-    {
-        path:'ng-template',
-        component:NgTemplateComponent,
-    },
-    {
-        path:'ng-conatiner',
-        component:NgContainerComponent,
-    },
-    {
-        path:'view-child',
-        component:ViewChildComponent,
-    }
+
+
 ];

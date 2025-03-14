@@ -1,0 +1,24 @@
+
+    <div class="flex">
+            <div class="container-login">
+        <div class="user-logo"></div>
+        <form >
+                <h1>Login</h1>
+                <div class="inputs">
+                    <input [(ngModel)]="userObj.userName" type="text" name="userName" placeholder="Username" required>
+                </div>
+                <div class="inputs box">
+                    <input [(ngModel)]="userObj.password" type="password" name="password" placeholder="password" required>
+                </div>
+                <div class="forget-pass"><a href="#">Forget your password?</a></div>
+                <button type="submit" (click)="onLogin()">Login</button>
+            
+        </form>
+        <div>
+            <hr>
+            <div class="signup">Don't have an account?<a href="#"><span>Sign up</span></a></div>
+            
+        </div>
+            </div>
+    
+    </div>
