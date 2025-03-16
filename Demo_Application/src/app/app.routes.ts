@@ -18,6 +18,7 @@ import { ViewChildComponent } from './Components/view-child/view-child.component
 import { LoginComponent } from './Components/login/login.component';
 import { Component } from '@angular/core';
 import { LayoutComponent } from './Components/layout/layout.component';
+import { authGuard } from './Components/auth.guard';
 
 export const routes: Routes = [
     // default route
@@ -43,6 +44,7 @@ export const routes: Routes = [
             {
                 path:'employess-list',
                 component:EmployessListComponent,
+                canActivate:[authGuard]
             },
             {
                 path:'data-binding',
