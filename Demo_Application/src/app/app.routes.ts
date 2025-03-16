@@ -19,6 +19,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { Component } from '@angular/core';
 import { LayoutComponent } from './Components/layout/layout.component';
 import { authGuard } from './Components/auth.guard';
+import { SignalComponent } from './Components/signal/signal.component';
 
 export const routes: Routes = [
     // default route
@@ -101,6 +102,10 @@ export const routes: Routes = [
             {
                 path:'view-child',
                 component:ViewChildComponent,
+            },
+            {
+                path:'signal',
+                component:SignalComponent,
             }
         ]
     },

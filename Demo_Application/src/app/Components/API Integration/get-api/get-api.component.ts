@@ -3,6 +3,8 @@ import { Component, inject } from '@angular/core';
 import { DepartmentServicesService } from '../../Services/department-services.service';
 import { AlertComponent } from '../../Resuable Components/alert/alert.component';
 import { MyButtonComponent } from '../../Resuable Components/alert/my-button/my-button.component';
+import { Customer } from '../../../Model/Class/customer';
+import { Iuser } from '../../../Model/Interface/Iuser';
 
 @Component({
   selector: 'app-get-api',
@@ -13,7 +15,8 @@ import { MyButtonComponent } from '../../Resuable Components/alert/my-button/my-
 export class GetApiComponent {
   
   //  private http = inject(HttpClient); // ✅ Inject HttpClient using modern approach
-  allUserData: any[] = [];
+  allUserData: Iuser[] = [];
+  userDataSet:Customer []=[];
   // constructor(private http:HttpClient) {}  // ✅ Dependency Inject HttpClient using tradation approach
   // getAllUser() {
   //   this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts').subscribe((result) => {
@@ -29,6 +32,7 @@ export class GetApiComponent {
  getAllUser() {
   this.depService.getAllDepartmentData().subscribe((result: any) => {
       this.allUserData = result;
+      this.userDataSet = result;
     },
     (error) => {
       console.log(error.statusText); 

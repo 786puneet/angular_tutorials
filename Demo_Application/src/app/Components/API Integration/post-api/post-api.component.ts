@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { DepartmentServicesService } from '../../Services/department-services.service';
 import { AlertComponent } from '../../Resuable Components/alert/alert.component';
 import { MyButtonComponent } from '../../Resuable Components/alert/my-button/my-button.component';
+import { Department } from '../../../Model/Class/customer';
 @Component({
   selector: 'app-post-api',
   imports: [FormsModule,AlertComponent,MyButtonComponent],
@@ -16,13 +17,15 @@ export class PostApiComponent  implements OnInit{
   ngOnInit(): void {
     this.getDepartmentData();
   }
-  departmentObj:any=
-  {
-    "departmentId": 0,
-    "departmentName": " ",
-    "departmentLogo": " ",
-  }
 
+  // this simple way to binding object with form
+  // departmentObj:any=
+  // {
+  //   "departmentId": 0,
+  //   "departmentName": " ",
+  //   "departmentLogo": " ",
+  // }
+  departmentObj:Department = new Department();
   
 
   // onSave(){

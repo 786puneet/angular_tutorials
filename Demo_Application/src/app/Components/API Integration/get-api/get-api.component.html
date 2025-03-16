@@ -22,6 +22,14 @@
             }
         </select>
     </div>
+    <div class="col-3">
+        <select class="form-select">
+            @for (item of userDataSet; track $index;)
+            {
+                <option value=""> {{$index + 1}} {{item.title}} </option>
+            }
+        </select>
+    </div>
 </div>
 
 <div class="col-4 my-2">
