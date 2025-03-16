@@ -13,11 +13,11 @@
         <div class="error-messages">
             @if((fName.touched || fName.dirty) && fName.errors?.['required'])
             {
-            <p class="text-danger">This field is required</p>
+            <p class="text-danger"> {{validationMessages.REQUIRED}} </p>
             }
             @else if ( fName.errors?.['minlength'])
             {
-            <p class="text-danger">Please enter alleast 4 words name</p>
+            <p class="text-danger">{{validationMessages.MIN_CHAR}}</p>
             }
         
         </div>
