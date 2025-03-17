@@ -5,6 +5,28 @@
 
 <div class="row">
     <div class="col-3">
-        <p> {{firstName()}} </p>
+        <p> {{firstName()}} -- {{newVar}} </p>
+    </div>
+    <div class="col-3">
+        <p> {{rollNumber()}} </p>
+    </div>
+    <div class="col-3">
+        <p> {{cityName()}} </p>
+    </div>
+    <div class="col-3">
+        <p> {{userData().city}} </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col 3">
+        <button class="btn btn-primary" (click)="addCity()">
+         Add City
+        </button>
+    </div>
+    <div class="col-3">
+        <button (click)="changeUserCity()" class="btn btn-primary">
+            Change User City
+        </button>
     </div>
 </div>
