@@ -76,13 +76,18 @@
                 </ul>
               </li> 
         </ul>
+    
            <p> {{loggedUserData.emailId}} </p>
           <button class="btn btn-danger" (click)="logOut()">LogOut</button>
            
       </div>
     </div>
   </nav> 
-  
-  <div class="container">
+  <select name="selectedUserType" [(ngModel)]="selectedUserType" (ngModelChange)="onRoleChange($event)">
+    <option   selected value="">Select User Type</option>
+    <option value="user"> User</option>
+    <option  value="guest"> Guest</option>
+  </select>
+  <div class="container ">
   <router-outlet></router-outlet>
   </div>

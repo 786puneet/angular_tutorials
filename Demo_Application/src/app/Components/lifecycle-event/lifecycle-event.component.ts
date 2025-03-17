@@ -1,4 +1,5 @@
-import { Component , OnInit , DoCheck , AfterViewInit , AfterViewChecked, AfterContentInit ,AfterContentChecked , OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { Component , OnInit , DoCheck , AfterViewInit , AfterViewChecked, AfterContentInit ,AfterContentChecked , OnDestroy, OnChanges, SimpleChanges, inject } from '@angular/core';
+import { DepartmentServicesService } from '../Services/department-services.service';
 
 @Component({
   selector: 'app-lifecycle-event',
@@ -8,11 +9,24 @@ import { Component , OnInit , DoCheck , AfterViewInit , AfterViewChecked, AfterC
 })
 export class LifecycleEventComponent implements OnInit, DoCheck ,AfterViewInit,AfterViewChecked,AfterContentInit,AfterContentChecked,OnDestroy,OnChanges{
 firstname:string;
-
+userRoleType:string="";
+userRoleType2:string="";
+deptService = inject(DepartmentServicesService);
 constructor()
 {
 console.log("hello this is constructor");
 this.firstname='';
+  
+  // with subject
+  this.deptService.onRoleChange$.subscribe((result:string)=>{
+    debugger;
+   this.userRoleType = result;
+  })
+// with behviour subject
+  this.deptService.onRoleChange2$.subscribe((result:string)=>{
+    debugger;
+   this.userRoleType2 = result;
+  })
 }
 
 ngOnInit(): void {
@@ -44,4 +58,5 @@ ngOnDestroy(): void {
 ngOnChanges(changes: SimpleChanges): void {
   console.log('onchanges init');
 }
+ 
 }
