@@ -37,7 +37,7 @@
                  
                       
                 </ng-container>
-
+  <strong> {{valueText}} </strong>
                 <ng-container *ngIf="!isAPI">
                     <tr *ngFor="let user of userData; let serialNo = index">
                         <td> {{serialNo + 1}} {{ user.name }}</td>
